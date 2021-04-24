@@ -1,9 +1,27 @@
 INSERT INTO department (id,name) 
 VALUES 
-(1,'cynthia'),
-(2,'nijay'),
-(3,'samuel'),
-(4,'elsa'),
-(5,'harry');
+(1,'Aviation'),
+(2,'Engineering'),
+(3,'Computer Science'),
+(4,'IT'),
+(5,'Civil Engineering');
 
+INSERT INTO role(title, salary,department_id) 
+VALUES
+(1, 'Sr.Manager', '250000',2),
+(2, 'Manger', '200000',2),
+(3, 'developer', '130000',4),
+(4, 'jr.developer', '90000',4);
 
+INSERT INTO employee(first_name,last_name,role_id,manager_id)
+VALUES
+('Ronald', 'Firbank', 3, 1),
+('Virginia', 'Woolf', 4, 1),
+('Piers', 'Gaveston', 3, 0),
+('Charles', 'LeRoi', 2, 1),
+('Katherine', 'Mansfield', 2, 1),
+('Dora', 'Carrington', 3, 0),
+('Edward', 'Bellamy', 3, 0),
+('Montague', 'Summers', 3, 1),
+('Octavia', 'Butler', 3, 1),
+('Unica', 'Zurn', 1,NULL);

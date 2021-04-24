@@ -17,8 +17,13 @@ app.use((req, res) => {
     res.status(404).end();
 });
 
+//Connect to database
+db.connect(err => {
+    if (err) throw err;
+    console.log('connected to Database');
 
-//Listen
-app.listen(PORT, () => {
-    console.log(`Server is Running on Port: ${PORT}`);
+    //Listen
+    app.listen(PORT, () => {
+        console.log(`Server is Running on Port: ${PORT}`);
+    });
 });

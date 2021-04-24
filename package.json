@@ -1,0 +1,31 @@
+{
+  "name": "SQL-Employee-tracker",
+  "version": "1.0.0",
+  "description": "A command-line application that accepts user input and enables a user to be able to view and manage the departments, roles, and employees in the company to organize and plan the business",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CynthiaMohan/SQL-Employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CynthiaMohan/SQL-Employee-tracker/issues"
+  },
+  "homepage": "https://github.com/CynthiaMohan/SQL-Employee-tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "express": "^4.17.1",
+    "inquirer": "^8.0.0",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
