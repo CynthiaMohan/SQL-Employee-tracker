@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const inputCheck = require('../../utils/inputCheck')
 const db = require('../../db/connection');
 
 //Get all departments

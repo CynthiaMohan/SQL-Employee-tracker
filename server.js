@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('./db/connection');
 const inquirer = require('inquirer');
 const cTable = require('console.table');
-const inputCheck = require('./utils/inputCheck');
+
 const apiRoutes = require('./routes/apiRoutes');
 
 const PORT = process.env.PORT || 3001;
@@ -20,6 +20,23 @@ app.use('/api', apiRoutes);
 app.use((req, res) => {
     res.status(404).end();
 });
+
+let startapp = () => {
+    inquirer.prompt([
+        {
+            type: list,
+            message: 'Menu',
+            choices: ['View all departments', 'View all roles', 'View all employees', 'Add a department', 'Add a role', 'Add an employee', 'And update an employee role'],
+            validate: menuInput => {
+                if (!menuInput) {
+                    console.log('Please choose an option');
+                    return false;
+                }
+                return true;
+            }
+        }
+    ]);
+}
 
 //Connect to database
 db.connect(err => {

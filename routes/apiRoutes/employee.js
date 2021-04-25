@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const db = require('../../db/connection');
+const inputCheck = require('../../utils/inputCheck');
 
 //Get all Employees
 router.get('/employee', (req, res) => {
@@ -18,17 +19,17 @@ router.get('/employee', (req, res) => {
 
 //Get an Employee of specific id
 router.get('/employee/:id', (req, res) => {
-    const sql = `SELECT * FROM employee WHERE id = ?;`
+    const sql = `SELECT * FROM employee WHERE id = ?;`;
     const params = req.params.id;
     db.query(sql, params, (err, row) => {
         if (err) {
-            res.status(400).json({ error: err.message });
-            return;
+            return res.status(400).json({ error: err.message });
+
         }
-        else if (!row.affectedRows) {
-            res.json({ message: `Employee not found.` });
-            return;
-        }
+        // else if (!row.changedRows) {
+        //     res.json({ message: `Employee not found.` });
+        //     return;
+        // }
         res.json({
             message: 'Success',
             data: row
