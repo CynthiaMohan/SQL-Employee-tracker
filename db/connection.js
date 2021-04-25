@@ -6,3 +6,5 @@ const db = mysql.createConnection({
     password: 'Password',
     database: 'tracker'
 });
+
+module.exports = db;

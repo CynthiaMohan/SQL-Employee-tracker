@@ -1,8 +1,9 @@
 const express = require('express');
 const db = require('./db/connection');
-
 const inquirer = require('inquirer');
 const cTable = require('console.table');
+const inputCheck = require('./utils/inputCheck');
+const apiRoutes = require('./routes/apiRoutes');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -11,6 +12,9 @@ const app = express();
 //Express Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+//Use api Routes
+app.use('/api', apiRoutes);
 
 //Default response
 app.use((req, res) => {
